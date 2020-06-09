@@ -62,11 +62,11 @@ export default function App() {
     <AppWrapper>
       <h1>FFXIV Quest Calculator</h1>
       <Progress
-        percentageDone={percentageDone(500)}
-        ARRPercentageDone={ARRPercentageDone(500)}
-        HWPercentageDone={HWPercentageDone(500)}
-        SBPercentageDone={SBPercentageDone(500)}
-        ShBPercentageDone={ShBPercentageDone(500)}
+        percentageDone={percentageDone(675)}
+        ARRPercentageDone={ARRPercentageDone(675)}
+        HWPercentageDone={HWPercentageDone(675)}
+        SBPercentageDone={SBPercentageDone(675)}
+        ShBPercentageDone={ShBPercentageDone(675)}
       />
       <Form />
     </AppWrapper>
