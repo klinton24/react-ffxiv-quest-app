@@ -11,30 +11,52 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
+const MaxARRQuests = 281;
+const MaxHWQuests = 419;
+const MaxSBQuests = 628;
+const MaxShBQuests = 734;
+
 const percentageDone = (i) => {
-  return Math.floor((i / 628) * 100);
+  return Math.floor((i / MaxShBQuests) * 100);
 };
 
 const ARRPercentageDone = (i) => {
-  return Math.floor((i / 281) * 100);
+  if (Math.floor((i / MaxARRQuests) * 100) > 100) {
+    return 100;
+  } else {
+    return Math.floor((i / MaxARRQuests) * 100);
+  }
 };
 
 const HWPercentageDone = (i) => {
-  if (i < 281) {
+  if (i < MaxARRQuests) {
     return 0;
+  } else if (Math.floor((i / MaxHWQuests) * 100) > 100) {
+    return 100;
   } else {
-    return Math.floor((i / 419) * 100);
+    return Math.floor((i / MaxHWQuests) * 100);
   }
 };
 
 const SBPercentageDone = (i) => {
-  if (i < 419) {
+  if (i < MaxHWQuests) {
     return 0;
+  } else if (Math.floor((i / MaxSBQuests) * 100) > 100) {
+    return 100;
   } else {
-    return Math.floor((i / 628) * 100);
+    return Math.floor((i / MaxSBQuests) * 100);
   }
 };
 
+const ShBPercentageDone = (i) => {
+  if (i < MaxSBQuests) {
+    return 0;
+  } else if (Math.floor((i / MaxShBQuests) * 100) > 100) {
+    return 100;
+  } else {
+    return Math.floor((i / MaxShBQuests) * 100);
+  }
+};
 export default function App() {
   return (
     <AppWrapper>
@@ -44,6 +66,7 @@ export default function App() {
         ARRPercentageDone={ARRPercentageDone(500)}
         HWPercentageDone={HWPercentageDone(500)}
         SBPercentageDone={SBPercentageDone(500)}
+        ShBPercentageDone={ShBPercentageDone(500)}
       />
       <Form />
     </AppWrapper>

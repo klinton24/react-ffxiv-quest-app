@@ -41,6 +41,7 @@ const Progress = ({
   ARRPercentageDone,
   HWPercentageDone,
   SBPercentageDone,
+  ShBPercentageDone,
 }) => {
   return (
     <ProgressBarContainer>
@@ -54,7 +55,9 @@ const Progress = ({
         <Track>
           <Filler percentageDone={SBPercentageDone} />
         </Track>
-        <Track></Track>
+        <Track>
+          <Filler percentageDone={ShBPercentageDone} />
+        </Track>
       </ExpBarContainer>
       <MainTrackWrapper>
         <Track>
