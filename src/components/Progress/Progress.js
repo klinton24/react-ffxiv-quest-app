@@ -10,17 +10,17 @@ const Track = styled.div`
 `;
 
 const Filler = styled.div`
-  width: ${(props) => props.percentage}%;
+  width: ${(props) => props.percentageDone}%;
   height: 100%;
   background-color: #66cc00;
   border-radius: 8px;
   transition: width 0.3s ease-in-out;
 `;
 
-const Progress = () => {
+const Progress = ({ percentageDone }) => {
   return (
     <Track>
-      <Filler percentage={50} />
+      <Filler percentageDone={percentageDone} />
     </Track>
   );
 };
