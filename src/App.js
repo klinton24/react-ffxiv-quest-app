@@ -67,7 +67,7 @@ const ShBPercentageDone = (i) => {
 };
 
 /*Delete Later*/
-const testValue = 425;
+const testValue = 50;
 export default function App() {
   return (
     <AppWrapper>

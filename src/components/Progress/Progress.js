@@ -35,6 +35,12 @@ const MainTrackWrapper = styled.div`
   margin-left: 25%;
 `;
 
+const FillerAdjust = (i) => {
+  if (i > 0 && i < 10) {
+    return 10;
+  } else return i;
+};
+
 const Progress = ({
   percentageDone,
   ARRPercentageDone,
@@ -47,21 +53,27 @@ const Progress = ({
       <ExpBarContainer>
         ARR
         <Track>
-          <Filler percentageDone={ARRPercentageDone}>
+          <Filler percentageDone={FillerAdjust(ARRPercentageDone)}>
             {ARRPercentageDone}%
           </Filler>
         </Track>
         HW
         <Track>
-          <Filler percentageDone={HWPercentageDone}>{HWPercentageDone}%</Filler>
+          <Filler percentageDone={FillerAdjust(HWPercentageDone)}>
+            {HWPercentageDone}%
+          </Filler>
         </Track>
         SB
         <Track>
-          <Filler percentageDone={SBPercentageDone}>{SBPercentageDone}%</Filler>
+          <Filler percentageDone={FillerAdjust(SBPercentageDone)}>
+            {SBPercentageDone}%
+          </Filler>
         </Track>
         ShB
         <Track>
-          <Filler percentageDone={ShBPercentageDone} />
+          <Filler percentageDone={FillerAdjust(ShBPercentageDone)}>
+            {ShBPercentageDone}%
+          </Filler>
         </Track>
       </ExpBarContainer>
       <MainTrackWrapper>
