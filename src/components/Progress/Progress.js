@@ -35,14 +35,25 @@ const MainTrackWrapper = styled.div`
   margin-left: 25%;
 `;
 
-const Progress = ({ percentageDone }) => {
+const Progress = ({
+  percentageDone,
+  ARRpercentageDone,
+  HWPercentageDone,
+  SBPercentageDone,
+}) => {
   return (
     <ProgressBarContainer>
       <ExpBarContainer>
-        <Track>A Realm Reborn</Track>
-        <Track>Heavensward</Track>
-        <Track>Stormblood</Track>
-        <Track>Shadowbringers</Track>
+        <Track>
+          <Filler percentageDone={ARRpercentageDone} />
+        </Track>
+        <Track>
+          <Filler percentageDone={HWPercentageDone} />
+        </Track>
+        <Track>
+          <Filler percentageDone={SBPercentageDone} />
+        </Track>
+        <Track></Track>
       </ExpBarContainer>
       <MainTrackWrapper>
         <Track>

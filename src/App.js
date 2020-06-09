@@ -15,11 +15,33 @@ const percentageDone = (i) => {
   return Math.floor((i / 628) * 100);
 };
 
+const ARRPercentageDone = (i) => {
+  return Math.floor((i / 281) * 100);
+};
+
+const HWPercentageDone = (i) => {
+  return Math.floor((i / 419) * 100);
+};
+
+const SBPercentageDone = (i) => {
+  return Math.floor((i / 628) * 100);
+};
+
+console.log(percentageDone(500));
+console.log(ARRPercentageDone(500));
+console.log(HWPercentageDone(500));
+console.log(SBPercentageDone(500));
+
 export default function App() {
   return (
     <AppWrapper>
       <h1>FFXIV Quest Calculator</h1>
-      <Progress percentageDone={percentageDone(500)} />
+      <Progress
+        percentageDone={percentageDone(500)}
+        ARRPercentageDone={ARRPercentageDone(500)}
+        HWPercentageDone={HWPercentageDone(500)}
+        SBPercentageDone={SBPercentageDone(500)}
+      />
       <Form />
     </AppWrapper>
   );
