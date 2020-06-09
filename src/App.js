@@ -1,15 +1,28 @@
 import React from "react";
 import Form from "./components/Form/Form";
+import styled from "styled-components";
+
 import Progress from "./components/Progress/Progress";
 
-function App() {
+const AppWrapper = styled.div`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const ProgressBarContainer = styled.div`
+  width: 80%;
+`;
+
+export default function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <h1>FFXIV Quest Calculator</h1>
-      <Progress />
+      <ProgressBarContainer>
+        <Progress />
+      </ProgressBarContainer>
       <Form />
-    </div>
+    </AppWrapper>
   );
 }
-
-export default App;
