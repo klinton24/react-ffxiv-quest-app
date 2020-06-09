@@ -11,10 +11,6 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-const ProgressBarContainer = styled.div`
-  width: 80%;
-`;
-
 const percentageDone = (i) => {
   return Math.floor((i / 628) * 100);
 };
@@ -23,9 +19,7 @@ export default function App() {
   return (
     <AppWrapper>
       <h1>FFXIV Quest Calculator</h1>
-      <ProgressBarContainer>
-        <Progress percentageDone={percentageDone(500)} />
-      </ProgressBarContainer>
+      <Progress percentageDone={percentageDone(500)} />
       <Form />
     </AppWrapper>
   );

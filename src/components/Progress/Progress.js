@@ -17,11 +17,40 @@ const Filler = styled.div`
   transition: width 0.3s ease-in-out;
 `;
 
+const ProgressBarContainer = styled.div`
+  width: 80%;
+`;
+
+const ExpBarContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 15%;
+  color: white;
+`;
+
+const MainTrackWrapper = styled.div`
+  justify-content: center;
+  margin-left: 25%;
+`;
+
 const Progress = ({ percentageDone }) => {
   return (
-    <Track>
-      <Filler percentageDone={percentageDone} />
-    </Track>
+    <ProgressBarContainer>
+      <ExpBarContainer>
+        <Track>A Realm Reborn</Track>
+        <Track>Heavensward</Track>
+        <Track>Stormblood</Track>
+        <Track>Shadowbringers</Track>
+      </ExpBarContainer>
+      <MainTrackWrapper>
+        <Track>
+          <Filler percentageDone={percentageDone} />
+        </Track>
+        <h3>{percentageDone}% Complete</h3>
+      </MainTrackWrapper>
+    </ProgressBarContainer>
   );
 };
 
