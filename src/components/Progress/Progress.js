@@ -24,6 +24,7 @@ const ProgressBarContainer = styled.div`
 const ExpBarContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  padding-bottom: 15px;
   flex-direction: row;
   width: 100%;
   padding-left: 15%;
@@ -37,7 +38,7 @@ const MainTrackWrapper = styled.div`
 
 const Progress = ({
   percentageDone,
-  ARRpercentageDone,
+  ARRPercentageDone,
   HWPercentageDone,
   SBPercentageDone,
 }) => {
@@ -45,7 +46,7 @@ const Progress = ({
     <ProgressBarContainer>
       <ExpBarContainer>
         <Track>
-          <Filler percentageDone={ARRpercentageDone} />
+          <Filler percentageDone={ARRPercentageDone} />
         </Track>
         <Track>
           <Filler percentageDone={HWPercentageDone} />

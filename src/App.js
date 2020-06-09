@@ -20,17 +20,20 @@ const ARRPercentageDone = (i) => {
 };
 
 const HWPercentageDone = (i) => {
-  return Math.floor((i / 419) * 100);
+  if (i < 281) {
+    return 0;
+  } else {
+    return Math.floor((i / 419) * 100);
+  }
 };
 
 const SBPercentageDone = (i) => {
-  return Math.floor((i / 628) * 100);
+  if (i < 419) {
+    return 0;
+  } else {
+    return Math.floor((i / 628) * 100);
+  }
 };
-
-console.log(percentageDone(500));
-console.log(ARRPercentageDone(500));
-console.log(HWPercentageDone(500));
-console.log(SBPercentageDone(500));
 
 export default function App() {
   return (
