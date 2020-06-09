@@ -31,42 +31,53 @@ const ARRPercentageDone = (i) => {
 const HWPercentageDone = (i) => {
   if (i < MaxARRQuests) {
     return 0;
-  } else if (Math.floor((i / MaxHWQuests) * 100) > 100) {
+  } else if (
+    Math.floor(((i - MaxARRQuests) / (MaxHWQuests - MaxARRQuests)) * 100) > 100
+  ) {
     return 100;
   } else {
-    return Math.floor((i / MaxHWQuests) * 100);
+    return Math.floor(
+      ((i - MaxARRQuests) / (MaxHWQuests - MaxARRQuests)) * 100
+    );
   }
 };
 
 const SBPercentageDone = (i) => {
   if (i < MaxHWQuests) {
     return 0;
-  } else if (Math.floor((i / MaxSBQuests) * 100) > 100) {
+  } else if (
+    Math.floor(((i - MaxHWQuests) / (MaxSBQuests - MaxHWQuests)) * 100 > 100)
+  ) {
     return 100;
   } else {
-    return Math.floor((i / MaxSBQuests) * 100);
+    return Math.floor(((i - MaxHWQuests) / (MaxSBQuests - MaxHWQuests)) * 100);
   }
 };
 
 const ShBPercentageDone = (i) => {
   if (i < MaxSBQuests) {
     return 0;
-  } else if (Math.floor((i / MaxShBQuests) * 100) > 100) {
+  } else if (
+    Math.floor(((i - MaxSBQuests) / (MaxShBQuests - MaxSBQuests)) * 100 > 100)
+  ) {
     return 100;
   } else {
-    return Math.floor((i / MaxShBQuests) * 100);
+    return Math.floor(((i - MaxSBQuests) / (MaxShBQuests - MaxSBQuests)) * 100);
   }
 };
+
+/*Delete Later*/
+const testValue = 425;
 export default function App() {
   return (
     <AppWrapper>
       <h1>FFXIV Quest Calculator</h1>
       <Progress
-        percentageDone={percentageDone(675)}
-        ARRPercentageDone={ARRPercentageDone(675)}
-        HWPercentageDone={HWPercentageDone(675)}
-        SBPercentageDone={SBPercentageDone(675)}
-        ShBPercentageDone={ShBPercentageDone(675)}
+        percentageDone={percentageDone(testValue)}
+        ARRPercentageDone={ARRPercentageDone(testValue)}
+        HWPercentageDone={HWPercentageDone(testValue)}
+        SBPercentageDone={SBPercentageDone(testValue)}
+        ShBPercentageDone={ShBPercentageDone(testValue)}
       />
       <Form />
     </AppWrapper>

@@ -28,7 +28,6 @@ const ExpBarContainer = styled.div`
   flex-direction: row;
   width: 100%;
   padding-left: 15%;
-  color: white;
 `;
 
 const MainTrackWrapper = styled.div`
@@ -46,15 +45,21 @@ const Progress = ({
   return (
     <ProgressBarContainer>
       <ExpBarContainer>
+        ARR
         <Track>
-          <Filler percentageDone={ARRPercentageDone} />
+          <Filler percentageDone={ARRPercentageDone}>
+            {ARRPercentageDone}%
+          </Filler>
         </Track>
+        HW
         <Track>
-          <Filler percentageDone={HWPercentageDone} />
+          <Filler percentageDone={HWPercentageDone}>{HWPercentageDone}%</Filler>
         </Track>
+        SB
         <Track>
-          <Filler percentageDone={SBPercentageDone} />
+          <Filler percentageDone={SBPercentageDone}>{SBPercentageDone}%</Filler>
         </Track>
+        ShB
         <Track>
           <Filler percentageDone={ShBPercentageDone} />
         </Track>
