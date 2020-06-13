@@ -18,13 +18,16 @@ const Form = () => {
   };
 
   const displayQInfo = (questNumber) => {
-    const selectedQuest = QuestData.find(function (element) {
-      return `<li>MSQ Competion Rate: ${Number(
-        (selectedQuest.questNumber / 628) * 100
-      ).toFixed(2)}%</li>
-    <li>Quest Giver: ${selectedQuest.questGiver}</li>
-    <li>It was introduced in patch: ${selectedQuest.patch}.</li>`;
-    });
+    return (
+      <ul>
+        <li>
+          MSQ Competion Rate:
+          {((selectedQuest.questNumber / 628) * 100).toFixed(2)}%
+        </li>
+        <li>Quest Giver: {selectedQuest.questGiver}</li>
+        <li>It was introduced in patch: {selectedQuest.patch}.</li>;
+      </ul>
+    );
   };
 
   const displayMatches = () => {
@@ -43,7 +46,7 @@ const Form = () => {
       <input type="text" value={selectedQuest} onChange={updateSearch} />
       <li>
         <a class="Name" href="#" onclick="displayQInfo(${quest.questNumber})">
-          ${QuestData.questName}
+          {QuestData.questName}
         </a>
       </li>
     </div>
