@@ -11,7 +11,21 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-const imgBackgroundGrid = styled.div`
+const ContentWrapper = styled.div`
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 350px;
+  align-items: left;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: stretch;
+`;
+
+const ImgBackgroundGrid = styled.div`
   position: absolute;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -23,7 +37,7 @@ const imgBackgroundGrid = styled.div`
   filter: brightness(50%);
 `;
 
-const gridImg = styled.div`
+const GridImg = styled.div`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -111,14 +125,14 @@ const imgArray = [
 
 const imgBackground = imgArray.map((image) => {
   return (
-    <gridImg>
+    <GridImg>
       <img
-        className=".grid-box"
+        className="gridImg"
         key={image}
         alt={image}
         src={require(`./images/${image}.jpg`)}
       />
-    </gridImg>
+    </GridImg>
   );
 });
 
@@ -127,16 +141,18 @@ const testValue = 50;
 export default function App() {
   return (
     <AppWrapper>
-      <h1>FFXIV Quest Calculator</h1>
-      <imgBackgroundGrid>{imgBackground}</imgBackgroundGrid>
-      <Progress
-        percentageDone={percentageDone(testValue)}
-        ARRPercentageDone={ARRPercentageDone(testValue)}
-        HWPercentageDone={HWPercentageDone(testValue)}
-        SBPercentageDone={SBPercentageDone(testValue)}
-        ShBPercentageDone={ShBPercentageDone(testValue)}
-      />
-      <Form />
+      <ContentWrapper>
+        <h1>FFXIV Quest Calculator</h1>
+        <ImgBackgroundGrid>{imgBackground}</ImgBackgroundGrid>
+        <Progress
+          percentageDone={percentageDone(testValue)}
+          ARRPercentageDone={ARRPercentageDone(testValue)}
+          HWPercentageDone={HWPercentageDone(testValue)}
+          SBPercentageDone={SBPercentageDone(testValue)}
+          ShBPercentageDone={ShBPercentageDone(testValue)}
+        />
+        <Form />
+      </ContentWrapper>
     </AppWrapper>
   );
 }
