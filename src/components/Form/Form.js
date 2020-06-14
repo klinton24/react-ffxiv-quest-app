@@ -3,17 +3,18 @@ import QuestData from "../../data/QuestData";
 
 const Form = () => {
   const [selectedQuest, setSelectedQuest] = useState("");
+  const [searchedQuest, setSearchedQuest] = useState("");
 
   const updateSearch = (e) => {
     setSelectedQuest({ search: e.target.value.substr(0, 20) });
     return;
   };
 
-  const findMatches = (wordToMatch, QuestData) => {
+  const findMatches = (searchedQuest, QuestData) => {
     return QuestData.filter((quest) => {
       // here matches the quest to what is being searched
-      const regex = new RegExp(wordToMatch, "gi");
-      return QuestData.questName.match(regex);
+      const regex = new RegExp(searchedQuest, "gi");
+      return quest.questName.match(regex);
     });
   };
 
