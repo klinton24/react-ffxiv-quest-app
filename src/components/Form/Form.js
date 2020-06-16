@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import questData from "../../data/questData";
+import Quest from "../Quest/Quest";
 
 const Form = () => {
   const [searchedQuest, setSearchedQuest] = useState("");
-  //const [selectedQuest, setSelectedQuest] = useState("");
+  const [matchedQuests, setMatchedQuests] = useState([]);
+  const [selectedQuest, setSelectedQuest] = useState("");
   const findMatches = (searchedQuest, questData) => {
     return questData.filter((quest) => {
       // here matches the quest to what is being searched
@@ -13,22 +15,25 @@ const Form = () => {
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
     setSearchedQuest(e.target.value);
-    findMatches(searchedQuest, questData);
+    setMatchedQuests(findMatches(searchedQuest, questData));
     //displayMatches();
-  };
-
-  const displayMatches = () => {
-    const matchArray = findMatches(searchedQuest, questData);
-    console.log(matchArray);
-    matchArray.map((quest) => {});
   };
 
   return (
     <div>
+      <p>{selectedQuest.questName}</p>
       <p>The searched quest is {searchedQuest} </p>
       <input type="text" onChange={handleChange} />
+      <ul>
+        {matchedQuests.map((quest) => (
+          <Quest
+            questName={quest.questName}
+            key={quest.id}
+            onClick={() => setSelectedQuest(quest)}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

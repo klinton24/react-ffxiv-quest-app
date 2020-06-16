@@ -1,7 +1,11 @@
 import React from "react";
 
-const Quest = () => {
-  return "";
+const Quest = (quest) => {
+  return (
+    <li>
+      <a href="#">{quest.questName}</a>
+    </li>
+  );
 };
 
 export default Quest;
