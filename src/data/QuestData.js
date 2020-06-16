@@ -1,5 +1,5 @@
 /*628 Quests in Array*/
-export const QuestData = [
+export const questData = [
   {
     questName: "Close to Home",
     questNumber: 1,
@@ -3789,4 +3789,4 @@ export const QuestData = [
   },
 ];
 
-export default QuestData;
+export default questData;

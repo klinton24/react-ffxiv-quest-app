@@ -13,14 +13,30 @@ const Form = () => {
     });
   };
 
+  setSearchedQuest((state) => {
+    state = searchedInput;
+    return state;
+  });
+
   const handleChange = (e) => {
     e.preventDefault();
-    setSearchedQuest((state) => {
-      state = searchedInput;
-      return state;
-    });
     findMatches(searchedQuest, questData);
-    //displayMatches();
+    displayMatches();
+  };
+
+  const displayMatches = () => {
+    const matchArray = findMatches(searchedQuest, questData);
+    console.log(searchedQuest);
+    /*
+    matchArray.map((quest) => {
+      const regex = new RegExp(searchedInput, "gi");
+      const questName = questData.questName.replace(
+        regex,
+        <span>{searchedInput}</span>
+      );
+      return questName;
+    });
+    */
   };
 
   return (
