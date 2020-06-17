@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./components/Form/Form";
 import styled from "styled-components";
 
@@ -136,22 +136,22 @@ const imgBackground = imgArray.map((image) => {
   );
 });
 
-/*Delete Later*/
-const testValue = 50;
 export default function App() {
+  const [questPercentage, setQuestPercentage] = useState(0);
+
   return (
     <AppWrapper>
       <ContentWrapper>
         <h1>FFXIV Quest Calculator</h1>
         <ImgBackgroundGrid>{imgBackground}</ImgBackgroundGrid>
         <Progress
-          percentageDone={percentageDone(testValue)}
-          ARRPercentageDone={ARRPercentageDone(testValue)}
-          HWPercentageDone={HWPercentageDone(testValue)}
-          SBPercentageDone={SBPercentageDone(testValue)}
-          ShBPercentageDone={ShBPercentageDone(testValue)}
+          percentageDone={percentageDone(questPercentage)}
+          ARRPercentageDone={ARRPercentageDone(questPercentage)}
+          HWPercentageDone={HWPercentageDone(questPercentage)}
+          SBPercentageDone={SBPercentageDone(questPercentage)}
+          ShBPercentageDone={ShBPercentageDone(questPercentage)}
         />
-        <Form />
+        <Form setQuestPercentage={setQuestPercentage} />
       </ContentWrapper>
     </AppWrapper>
   );

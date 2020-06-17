@@ -1,11 +1,9 @@
 import React from "react";
 
-const Quest = (quest) => {
-  return (
-    <li>
-      <a href="#">{quest.questName}</a>
-    </li>
-  );
+const Quest = ({ questName, onClick }) => {
+  //TODO const displayQInfo = () => {};
+
+  return <li onClick={onClick}>{questName}</li>;
 };
 
 export default Quest;
