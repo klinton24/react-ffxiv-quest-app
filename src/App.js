@@ -1,48 +1,13 @@
 import React, { useState } from "react";
 import Form from "./components/Form/Form";
-import styled from "styled-components";
+import {
+  AppWrapper,
+  ContentWrapper,
+  GridImg,
+  ImgBackgroundGrid,
+} from "./styles.js";
 
 import Progress from "./components/Progress/Progress";
-
-const AppWrapper = styled.div`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`;
-
-const ContentWrapper = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  min-width: 350px;
-  align-items: left;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: stretch;
-`;
-
-const ImgBackgroundGrid = styled.div`
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  justify-items: center;
-  grid-row-gap: 0px;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  filter: brightness(50%);
-`;
-
-const GridImg = styled.div`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  align-items: center;
-`;
 
 const MaxARRQuests = 281;
 const MaxHWQuests = 419;

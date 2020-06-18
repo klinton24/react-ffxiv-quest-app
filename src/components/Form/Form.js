@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import questData from "../../data/questData";
 import Quest from "../Quest/Quest";
+import { QuestList } from "../../styles";
 
 const Form = ({ setQuestPercentage }) => {
   const [searchedQuest, setSearchedQuest] = useState("");
   const [matchedQuests, setMatchedQuests] = useState([]);
   const [selectedQuest, setSelectedQuest] = useState(undefined);
-
-  const QuestList = styled.ul``;
 
   const findMatches = (searchedQuest, questData) => {
     return questData.filter((quest) => {
@@ -22,7 +20,6 @@ const Form = ({ setQuestPercentage }) => {
     setSearchedQuest(e.target.value);
     setMatchedQuests(findMatches(searchedQuest, questData));
     //displayMatches();
-    console.log(selectedQuest);
   };
 
   useEffect(() => {
